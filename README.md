@@ -13,6 +13,7 @@ npm install v-satori
 Example with Nuxt 3
 
 ```ts
+// ~/server/api/hello.ts
 import satori from 'satori'
 import { html } from 'v-satori'
 

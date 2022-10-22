@@ -2,7 +2,7 @@
   "name": "v-satori",
   "version": "0.0.0",
   "packageManager": "pnpm@7.14.0",
-  "description": "",
+  "description": "Generate a satori-friendly VDOM from a Vue component.",
   "author": "Robert Soriano <sorianorobertc@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/wobsoriano/v-satori#readme",
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/wobsoriano/v-satori.git"
   },
   "bugs": "https://github.com/wobsoriano/v-satori/issues",
-  "keywords": [],
+  "keywords": ["vue", "satori", "nuxt"],
   "sideEffects": false,
   "exports": {
     ".": {
