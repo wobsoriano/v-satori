@@ -11,13 +11,13 @@ describe('should run', () => {
       template: '<img :src="src" :width="width" :height="height" />',
     })
 
-    const res = await html(App)
-    const asd = await satori(res, {
+    const string = await html(App)
+    const svg = await satori(string, {
       width: 300,
       height: 300,
       fonts: [],
     })
 
-    expect(asd).toMatchSnapshot()
+    expect(svg).toMatchSnapshot()
   })
 })
