@@ -3181,7 +3181,6 @@ packages:
 
   /ultrahtml/1.0.0-next.4:
     resolution: {integrity: sha512-Y6lU3i9asEyzQfUHh5bhWiPDdR+vk+nta0XEouAi7gBKZ6PqUKVMNW693yYYBchDOBv0D22LqNz0puOpeM/7pQ==}
-    dev: false
 
   /unbox-primitive/1.0.2:
     resolution: {integrity: sha512-61pPlCD9h51VoreyJ0BReideM3MDKMKnh6+V9L08331ipq6Q8OFXZYiqP6n/tbHx4s5I9uRhcye6BrbkizkBDw==}
