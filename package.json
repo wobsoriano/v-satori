@@ -1,0 +1,60 @@
+{
+  "name": "v-satori",
+  "version": "0.0.0",
+  "packageManager": "pnpm@7.14.0",
+  "description": "",
+  "author": "Robert Soriano <sorianorobertc@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/wobsoriano/v-satori#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wobsoriano/v-satori.git"
+  },
+  "bugs": "https://github.com/wobsoriano/v-satori/issues",
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build-fast": "tsup src/index.ts --format cjs,esm",
+    "build": "nr build-fast --dts-resolve",
+    "lint": "eslint .",
+    "prepublishOnly": "nr build",
+    "release": "bumpp && npm publish",
+    "start": "tsx src/index.ts",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.0"
+  },
+  "dependencies": {
+    "satori-html": "^0.3.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.27.0",
+    "@antfu/ni": "^0.18.2",
+    "bumpp": "^8.2.1",
+    "eslint": "^8.26.0",
+    "pnpm": "^7.14.0",
+    "tsup": "6.0.1",
+    "tsx": "^3.10.4",
+    "typescript": "^4.7.4",
+    "vitest": "^0.24.3",
+    "vue": "^3.2.41"
+  },
+  "eslintConfig": {
+    "extends": "@antfu"
+  }
+}
