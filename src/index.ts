@@ -1,5 +1,5 @@
 import { renderToString } from 'vue/server-renderer'
-import { createSSRApp } from 'vue'
+import { createApp } from 'vue'
 import { html as _html } from 'satori-html'
 import type { Component } from 'vue'
 
@@ -14,7 +14,7 @@ export interface VNode {
 }
 
 export async function html(component: Component): Promise<VNode> {
-  const App = createSSRApp(component)
+  const App = createApp(component)
   const strComponent = await renderToString(App)
 
   return _html(strComponent)
