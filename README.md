@@ -13,13 +13,14 @@ npm install v-satori
 Example with Nuxt 3
 
 ```ts
-// ~/server/api/hello.ts
+// ~/server/api/og/[text].ts
 import satori from 'satori'
 import { html } from 'v-satori'
 
-export default defineEventHandler(async () => {
+export default defineEventHandler(async (event) => {
+  const { text } = event.context.params
   const App = defineComponent({
-    data: () => ({ text: 'hello, world', color: 'black' }),
+    data: () => ({ text, color: 'black' }),
     template: '<div :style="{ color }">{{ text }}</div>'
   })
 
