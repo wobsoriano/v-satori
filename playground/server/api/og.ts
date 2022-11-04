@@ -8,6 +8,7 @@ import Image from '@/components/Image'
 
 async function initFonts(): Promise<SatoriOptions['fonts']> {
   const fontPath = join(process.cwd(), 'public', 'fonts', 'Roboto-Bold.ttf')
+  console.log(fontPath)
   const fontData = await fs.readFile(fontPath)
   return [
     {
