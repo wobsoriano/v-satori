@@ -79,7 +79,7 @@ You can then create new dynamic images by passing the following parameters to th
 
 ```vue
 <script setup>
-const title = 'Hello from Nuxt'
+const title = 'OG Image Generator using Nuxt and Satori'
 const website = 'v3.nuxtjs.org'
 </script>
 
