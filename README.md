@@ -92,7 +92,7 @@ const website = 'v3.nuxtjs.org'
 
 Output:
 
-<img src="sample.svg" />
+<img src="og.svg" />
 
 Need help with SFC/TSX imports :D
 
