@@ -7,14 +7,20 @@ import { html } from 'v-satori'
 import { eventHandler, getQuery } from 'h3'
 import Image from '@/components/Image'
 
-export const config = {
-  runtime: 'experimental-edge',
-}
-
 async function initFonts(): Promise<SatoriOptions['fonts']> {
-  const fontPath = join(__dirname, 'fonts', 'Roboto-Bold.ttf')
-  console.log('fontPath', fontPath)
-  const fontData = await fs.readFile(fontPath)
+  let fontData: Buffer
+
+  if (process.env.NODE_ENV === 'development') {
+    const fontPath = join(process.cwd(), 'public', 'fonts', 'Roboto-Bold.ttf')
+    fontData = await fs.readFile(fontPath)
+  }
+  else {
+    // TODO: Fix this
+    fontData = await $fetch('https://v-satori.vercel.app/fonts/Roboto-Bold.ttf', {
+      responseType: 'arrayBuffer',
+    })
+  }
+
   return [
     {
       name: 'Inter',
@@ -31,8 +37,8 @@ export default eventHandler(async (event) => {
   const query = getQuery(event)
 
   const markup = await html(h(Image as any, {
-    title: query.title || 'The optional chaining operator (?.) in Javascript',
-    website: query.website || 'fullstackheroes.com',
+    title: query.title || 'OG Image Generator using Nuxt and Satori',
+    website: query.website || 'v3.nuxtjs.org',
   }))
 
   const svg = await satori(markup, {
