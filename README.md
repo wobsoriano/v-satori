@@ -50,7 +50,7 @@ export default defineEventHandler(async (event) => {
 })
 ```
 
-Need help with SFC/TSX imports :D
+Need help with SFC/TSX imports in Nuxt :D
 
 ## License
 
