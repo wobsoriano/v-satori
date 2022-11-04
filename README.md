@@ -92,7 +92,7 @@ const website = 'v3.nuxtjs.org'
 
 Output:
 
-<img src="https://v-satori.vercel.app/api/og?title=OG%20Image%20Generator%20using%20Nuxt%20and%20Satori&website=v3.nuxtjs.org" />
+<img src="og.svg" />
 
 Need help with SFC/TSX imports :D
 
