@@ -13,42 +13,86 @@ npm install v-satori
 Example with Nuxt 3
 
 ```ts
-// ~/components/Welcome.ts
+// ~/components/Image.ts
 import { defineComponent, h } from 'vue'
 
+const TW = (tag, tw, children) => h(tag, { tw }, children)
+
 export default defineComponent({
-  props: ['name', 'color'],
+  props: {
+    title: {
+      type: String,
+      required: true
+    },
+    website: {
+      type: String,
+      required: true
+    }
+  },
   setup(props) {
-    return () => h(
+    return () => TW(
       'div',
-      { style: { color: props.color } },
-      `Hello, ${props.name}`
+      'h-full w-full flex items-start justify-start border border-blue-500 border-[12px] bg-gray-50',
+      TW(
+        'div',
+        'flex items-start justify-start h-full',
+        TWElement(
+          'div',
+          'flex flex-col justify-between w-full h-full',
+          [
+            TW('h1', 'text-[80px] p-20 font-black text-left', props.title),
+            TW('div', 'text-2xl pb-10 px-20 font-bold mb-0', props.website)
+          ]
+        )
+      )
     )
   }
 })
 ```
 
 ```ts
-// ~/server/api/og/[name].ts
+// ~/server/api/og.ts
 import satori from 'satori'
-import { html } from 'v-satori'
 import { h } from 'vue'
-import Welcome from '@/components/welcome'
+import { html } from 'v-satori'
+import Image from '@/components/Image'
 
 export default defineEventHandler(async (event) => {
-  const { name } = event.context.params
+  const query = useQuery(event)
 
-  const markup = await html(h(Welcome, { name, color: 'green' }))
+  const markup = await html(h(Tailwind, {
+    title: query.title,
+    website: query.website
+  }))
 
   const svg = await satori(markup, {
-    width: 600,
-    height: 400,
-    fonts: [],
+    width: 1200,
+    height: 627,
+    // fonts required
   })
 
   return svg
 })
 ```
+
+You can then create new dynamic images by passing the following parameters to the API endpoint:
+
+```vue
+<script setup>
+const title = 'Hello from Nuxt'
+const website = 'v3.nuxtjs.org'
+</script>
+
+<template>
+  <Head>
+    <Meta property="og:image" :content="`/api/og?title=${title}&website=${website}`" />
+  </Head>
+</template>
+```
+
+Output:
+
+<img src="sample.svg" />
 
 Need help with SFC/TSX imports :D
 
