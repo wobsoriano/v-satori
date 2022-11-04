@@ -1,5 +1,5 @@
 import * as fs from 'fs/promises'
-// import { join } from 'path'
+import { join } from 'path'
 import type { SatoriOptions } from 'satori'
 import satori from 'satori'
 import { h } from 'vue'
@@ -12,7 +12,9 @@ export const config = {
 }
 
 async function initFonts(): Promise<SatoriOptions['fonts']> {
-  const fontData = await fs.readFile('./fonts/Roboto-Bold.ttf')
+  const fontPath = join(__dirname, 'fonts', 'Roboto-Bold.ttf')
+  console.log('fontPath', fontPath)
+  const fontData = await fs.readFile(fontPath)
   return [
     {
       name: 'Inter',
