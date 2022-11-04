@@ -13,18 +13,32 @@ npm install v-satori
 Example with Nuxt 3
 
 ```ts
-// ~/server/api/og/[text].ts
+// ~/components/Welcome.ts
+import { defineComponent, h } from 'vue'
+
+export default defineComponent({
+  props: ['name', 'color'],
+  setup(props) {
+    return () => h(
+      'div',
+      { style: { color: props.color } },
+      `Hello, ${props.name}`
+    )
+  }
+})
+```
+
+```ts
+// ~/server/api/og/[name].ts
 import satori from 'satori'
 import { html } from 'v-satori'
+import { h } from 'vue'
+import Welcome from '@/components/welcome'
 
 export default defineEventHandler(async (event) => {
-  const { text } = event.context.params
-  const App = defineComponent({
-    data: () => ({ text, color: 'black' }),
-    template: '<div :style="{ color }">{{ text }}</div>'
-  })
+  const { name } = event.context.params
 
-  const markup = await html(App)
+  const markup = await html(h(Welcome, { name, color: 'green' }))
 
   const svg = await satori(markup, {
     width: 600,
@@ -35,6 +49,8 @@ export default defineEventHandler(async (event) => {
   return svg
 })
 ```
+
+Need help with SFC/TSX imports :D
 
 ## License
 
