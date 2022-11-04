@@ -1,0 +1,17 @@
+{
+  "name": "playground",
+  "private": true,
+  "scripts": {
+    "build": "NITRO_PRESET=vercel-edge nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "v-satori": "workspace:*"
+  },
+  "devDependencies": {
+    "nuxt": "3.0.0-rc.13"
+  }
+}
