@@ -12,7 +12,7 @@ export const config = {
 }
 
 async function initFonts(): Promise<SatoriOptions['fonts']> {
-  const fontPath = join(process.cwd(), 'fonts', 'Roboto-Bold.ttf')
+  const fontPath = join('fonts', 'Roboto-Bold.ttf')
   console.log('fontPath', fontPath)
   const fontData = await fs.readFile(fontPath)
   return [
