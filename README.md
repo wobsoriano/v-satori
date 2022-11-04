@@ -60,7 +60,7 @@ import Image from '@/components/Image'
 export default defineEventHandler(async (event) => {
   const query = useQuery(event)
 
-  const markup = await html(h(Tailwind, {
+  const markup = await html(h(Image, {
     title: query.title,
     website: query.website
   }))
