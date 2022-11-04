@@ -47,6 +47,5 @@ export default eventHandler(async (event) => {
     fonts,
   })
 
-  event.res.statusCode = 304
   return svg
 })
