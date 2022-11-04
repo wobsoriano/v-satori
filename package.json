@@ -37,7 +37,8 @@
     "prepublishOnly": "nr build",
     "release": "bumpp && npm publish",
     "test": "vitest",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "dev:vercel:deploy": "rm -rf .vercel && pnpm --filter playground build && mv ./playground/.vercel ."
   },
   "peerDependencies": {
     "vue": "^3.2.0"
