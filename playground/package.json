@@ -12,6 +12,6 @@
     "v-satori": "workspace:*"
   },
   "devDependencies": {
-    "nuxt": "3.0.0-rc.13"
+    "nuxt": "3.0.0"
   }
 }
