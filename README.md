@@ -13,8 +13,6 @@ npm install v-satori
 Example with Nuxt 3
 
 ```vue
-// ~/components/Image.vue
-
 <script setup>
 defineProps({
   title: String,
