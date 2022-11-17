@@ -2,7 +2,6 @@ import * as fs from 'fs/promises'
 import { join } from 'path'
 import type { SatoriOptions } from 'satori'
 import satori from 'satori'
-import { h } from 'vue'
 import { html } from 'v-satori'
 import { eventHandler, getQuery } from 'h3'
 import Image from '@/components/Image'
@@ -34,12 +33,12 @@ async function initFonts(): Promise<SatoriOptions['fonts']> {
 export default eventHandler(async (event) => {
   const fonts = await initFonts()
 
-  const query = getQuery(event)
+  const query = getQuery(event) as Record<string, string>
 
-  const markup = await html(h(Image as any, {
+  const markup = await html(Image, {
     title: query.title || 'OG Image Generator using Nuxt and Satori',
     website: query.website || 'v3.nuxtjs.org',
-  }))
+  })
 
   const svg = await satori(markup, {
     width: 1200,

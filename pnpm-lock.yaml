@@ -5,7 +5,6 @@ importers:
   .:
     specifiers:
       '@antfu/eslint-config': ^0.27.0
-      '@antfu/ni': ^0.18.2
       bumpp: ^8.2.1
       eslint: ^8.26.0
       node-fetch-native: ^0.1.8
@@ -20,7 +19,6 @@ importers:
       satori-html: 0.3.0
     devDependencies:
       '@antfu/eslint-config': 0.27.0_e3uo4sehh4zr4i6m57mkkxxv7y
-      '@antfu/ni': 0.18.6
       bumpp: 8.2.1
       eslint: 8.27.0
       node-fetch-native: 0.1.8
@@ -133,11 +131,6 @@ packages:
       - eslint-import-resolver-webpack
       - supports-color
       - typescript
-    dev: true
-
-  /@antfu/ni/0.18.6:
-    resolution: {integrity: sha512-0H2Wkh0A/I6GaBgAnlyYDKYyQObkImoJMy5i+hcn8X1N4es+g/mvBk6IZSuHQovbRSFX4UNZ8+LorVwNoKg9lQ==}
-    hasBin: true
     dev: true
 
   /@babel/code-frame/7.18.6:
