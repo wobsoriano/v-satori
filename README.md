@@ -5,7 +5,7 @@ Generate a [satori](https://github.com/vercel/satori)-friendly VDOM from a Vue c
 ## Installion
 
 ```bash
-npm install v-satori
+npm install satori v-satori
 ```
 
 ## Usage
@@ -47,22 +47,20 @@ defineProps({
 
 ```ts
 // ~/server/api/og.ts
-import satori from 'satori'
-import { html } from 'v-satori'
+import { satori } from 'v-satori'
 import Image from '@/components/Image.vue'
 
 export default eventHandler(async (event) => {
   const query = useQuery(event)
 
-  const markup = await html(Image, {
-    title: query.title,
-    website: query.website
-  })
-
-  const svg = await satori(markup, {
+  const svg = await satori(Image, {
+    props: {
+      title: query.title,
+      website: query.website
+    },
     width: 1200,
     height: 627,
-    // fonts required
+    fonts: []
   })
 
   return svg

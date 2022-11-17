@@ -1,8 +1,8 @@
 import * as fs from 'fs/promises'
 import { join } from 'path'
 import type { SatoriOptions } from 'satori'
-import satori from 'satori'
-import { html } from 'v-satori'
+// import satori from 'satori'
+import { satori } from 'v-satori'
 import { eventHandler, getQuery } from 'h3'
 import Image from '@/components/jsx'
 
@@ -35,12 +35,11 @@ export default eventHandler(async (event) => {
 
   const query = getQuery(event) as Record<string, string>
 
-  const markup = await html(Image, {
-    title: query.title || 'OG Image Generator using Nuxt and Satori',
-    website: query.website || 'v3.nuxtjs.org',
-  })
-
-  const svg = await satori(markup, {
+  const svg = await satori(Image, {
+    props: {
+      title: query.title,
+      website: query.website,
+    },
     width: 1200,
     height: 627,
     fonts,

@@ -45,6 +45,7 @@
     "dev:vercel:deploy": "rm -rf .vercel && pnpm --filter playground build && mv ./playground/.vercel ."
   },
   "peerDependencies": {
+    "satori": "*",
     "vue": "^3.2.0"
   },
   "dependencies": {
