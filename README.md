@@ -53,17 +53,16 @@ export default defineComponent({
 ```ts
 // ~/server/api/og.ts
 import satori from 'satori'
-import { h } from 'vue'
 import { html } from 'v-satori'
 import Image from '@/components/Image'
 
 export default defineEventHandler(async (event) => {
   const query = useQuery(event)
 
-  const markup = await html(h(Image, {
+  const markup = await html(Image, {
     title: query.title,
     website: query.website
-  }))
+  })
 
   const svg = await satori(markup, {
     width: 1200,
