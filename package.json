@@ -22,13 +22,17 @@
       "types": "./dist/index.d.ts",
       "require": "./dist/index.js",
       "import": "./dist/index.mjs"
+    },
+    "./nuxt": {
+      "import": "./nuxt.mjs"
     }
   },
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "nuxt.mjs"
   ],
   "scripts": {
     "build-fast": "tsup src/index.ts --format cjs,esm",
@@ -48,6 +52,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.27.0",
+    "@nuxt/kit": "^3.0.0",
     "bumpp": "^8.2.1",
     "eslint": "^8.26.0",
     "node-fetch-native": "^0.1.8",

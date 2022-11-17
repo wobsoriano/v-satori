@@ -5,6 +5,7 @@ importers:
   .:
     specifiers:
       '@antfu/eslint-config': ^0.27.0
+      '@nuxt/kit': ^3.0.0
       bumpp: ^8.2.1
       eslint: ^8.26.0
       node-fetch-native: ^0.1.8
@@ -19,6 +20,7 @@ importers:
       satori-html: 0.3.0
     devDependencies:
       '@antfu/eslint-config': 0.27.0_e3uo4sehh4zr4i6m57mkkxxv7y
+      '@nuxt/kit': 3.0.0
       bumpp: 8.2.1
       eslint: 8.27.0
       node-fetch-native: 0.1.8
