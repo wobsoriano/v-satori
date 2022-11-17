@@ -14,10 +14,7 @@ Nuxt 3
 
 ```ts
 export default defineNuxtConfig({
-  modules: ['v-satori/nuxt'],
-  satori: {
-    jsx: false // support for jsx/tsx imports in server routes
-  }
+  modules: ['v-satori/nuxt']
 })
 ```
 
