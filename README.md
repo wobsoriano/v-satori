@@ -83,7 +83,7 @@ const website = 'v3.nuxtjs.org'
 
 Output:
 
-<img src="og.svg" />
+<img src="https://v-satori.vercel.app/api/og?title=OG%20Image%20Generator%20using%20Nuxt%20and%20Satori&website=v3.nuxtjs.org" />
 
 ## License
 
