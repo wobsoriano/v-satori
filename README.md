@@ -10,7 +10,13 @@ npm install v-satori
 
 ## Usage
 
-Example with Nuxt 3
+Nuxt 3
+
+```ts
+export default defineNuxtConfig({
+  modules: ['v-satori/nuxt'],
+})
+```
 
 ```vue
 <script setup>
