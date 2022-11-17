@@ -38,7 +38,7 @@ export async function html<T extends Component = Component>(component: T, props?
 export async function satori<T extends Component = Component>(component: T, options: SatoriOptions & {
   props: ExtractComponentProps<T>
 }) {
-  const markup = await html(component)
+  const markup = await html(component, options.props)
   const result = await _satori(markup, options)
   return result
 }

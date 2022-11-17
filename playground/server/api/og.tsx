@@ -45,5 +45,7 @@ export default eventHandler(async (event) => {
     fonts,
   })
 
+  setHeader(event, 'Content-Type', 'image/svg+xml')
+
   return svg
 })
