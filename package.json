@@ -24,7 +24,8 @@
       "import": "./dist/index.mjs"
     },
     "./nuxt": {
-      "import": "./nuxt.mjs"
+      "types": "./nuxt/module.d.ts",
+      "import": "./nuxt/module.mjs"
     }
   },
   "main": "./dist/index.js",
@@ -32,7 +33,7 @@
   "types": "./dist/index.d.ts",
   "files": [
     "dist",
-    "nuxt.mjs"
+    "nuxt"
   ],
   "scripts": {
     "build-fast": "tsup src/index.ts --format cjs,esm",

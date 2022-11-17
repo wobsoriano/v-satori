@@ -18,12 +18,12 @@ export default defineNuxtModule({
       )
 
       if (options.jsx) {
-        const { nodeResolve } = await import('@rollup/plugin-node-resolve')
+        // const { nodeResolve } = await import('@rollup/plugin-node-resolve')
         const vueJsx = await import('@vitejs/plugin-vue-jsx').then(r => r.default || r)
         config.rollupConfig.plugins.push(
-          nodeResolve({
-            extensions: ['.ts', '.mjs', '.js', '.json', '.node', '.tsx', '.jsx'],
-          }),
+          // nodeResolve({
+          //   extensions: ['.ts', '.mjs', '.js', '.json', '.node', '.tsx', '.jsx'],
+          // }),
           vueJsx(),
         )
       }
