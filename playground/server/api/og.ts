@@ -37,8 +37,8 @@ export default eventHandler(async (event) => {
 
   const svg = await satori(Image, {
     props: {
-      title: query.title,
-      website: query.website,
+      title: query.title || 'OG Image Generator using Nuxt and Satori',
+      website: query.website || 'v-satori.vercel.app',
     },
     width: 1200,
     height: 627,
