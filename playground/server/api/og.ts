@@ -4,7 +4,7 @@ import type { SatoriOptions } from 'satori'
 // import satori from 'satori'
 import { satori } from 'v-satori'
 import { eventHandler, getQuery } from 'h3'
-import Image from '@/components/jsx'
+import Image from '@/components/sfc.vue'
 
 async function initFonts(): Promise<SatoriOptions['fonts']> {
   let fontData: Buffer
