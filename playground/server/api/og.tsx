@@ -4,7 +4,7 @@ import type { SatoriOptions } from 'satori'
 // import satori from 'satori'
 import { satori } from 'v-satori'
 import { eventHandler, getQuery } from 'h3'
-import Image from '@/components/sfc.vue'
+import Image from '@/components/jsx'
 
 async function initFonts(): Promise<SatoriOptions['fonts']> {
   let fontData: Buffer
@@ -35,11 +35,8 @@ export default eventHandler(async (event) => {
 
   const query = getQuery(event) as Record<string, string>
 
-  const svg = await satori(Image, {
-    props: {
-      title: query.title || 'OG Image Generator using Nuxt and Satori',
-      website: query.website || 'v-satori.vercel.app',
-    },
+  // @ts-expect-error: todo
+  const svg = await satori(<Image title={query.title} website={query.website} />, {
     width: 1200,
     height: 627,
     fonts,

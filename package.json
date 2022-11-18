@@ -67,5 +67,10 @@
   },
   "eslintConfig": {
     "extends": "@antfu"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "nitropack@1.0.0": "patches/nitropack@1.0.0.patch"
+    }
   }
 }

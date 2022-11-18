@@ -1,0 +1,22 @@
+diff --git a/dist/shared/nitro.c8278d90.mjs b/dist/shared/nitro.c8278d90.mjs
+index 9ba312fc248da3731720ee7e3b38ba2a85537657..382793c8c88151f3e08175f60b3575e767fae453 100644
+--- a/dist/shared/nitro.c8278d90.mjs
++++ b/dist/shared/nitro.c8278d90.mjs
+@@ -909,7 +909,7 @@ function importMeta(nitro) {
+ }
+ 
+ const getRollupConfig = (nitro) => {
+-  const extensions = [".ts", ".mjs", ".js", ".json", ".node"];
++  const extensions = [".ts", ".mjs", ".js", ".json", ".node", ".tsx", ".jsx"];
+   const nodePreset = nitro.options.node === false ? unenv.nodeless : unenv.node;
+   const builtinPreset = {
+     alias: {
+@@ -1144,7 +1144,7 @@ export const plugins = [
+   return rollupConfig;
+ };
+ 
+-const GLOB_SCAN_PATTERN = "**/*.{ts,mjs,js,cjs}";
++const GLOB_SCAN_PATTERN = "**/*.{ts,mjs,js,cjs,tsx,jsx}";
+ const httpMethodRegex = /\.(connect|delete|get|head|options|patch|post|put|trace)/;
+ async function scanHandlers(nitro) {
+   const handlers = await Promise.all([
