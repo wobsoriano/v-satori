@@ -1,5 +1,5 @@
 import * as fs from 'fs/promises'
-import { join } from 'path'
+import path from 'path'
 import type { SatoriOptions } from 'satori'
 // import satori from 'satori'
 import { satori } from 'v-satori'
@@ -9,8 +9,17 @@ import Image from '@/components/jsx'
 async function initFonts(): Promise<SatoriOptions['fonts']> {
   let fontData: Buffer
 
+  try {
+    const fontPath = path.join(process.cwd(), 'static', 'fonts', 'Roboto-Bold.ttf')
+    const fontDataTest = await fs.readFile(fontPath)
+    console.log('process.cwd()', process.cwd())
+    console.log('fontDataTest', fontDataTest)
+  } catch (err) {
+    console.log('ERR', err)
+  }
+
   if (process.env.NODE_ENV === 'development') {
-    const fontPath = join(process.cwd(), 'public', 'fonts', 'Roboto-Bold.ttf')
+    const fontPath = path.join(process.cwd(), 'public', 'fonts', 'Roboto-Bold.ttf')
     fontData = await fs.readFile(fontPath)
   }
   else {
