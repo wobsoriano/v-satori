@@ -10,11 +10,12 @@ async function initFonts(): Promise<SatoriOptions['fonts']> {
   let fontData: Buffer
 
   try {
-    const fontPath = path.join(process.cwd(), 'static', 'fonts', 'Roboto-Bold.ttf')
+    const fontPath = path.join(process.cwd(), 'fonts', 'Roboto-Bold.ttf')
     const fontDataTest = await fs.readFile(fontPath)
     console.log('process.cwd()', process.cwd())
     console.log('fontDataTest', fontDataTest)
   } catch (err) {
+    console.log('process.cwd()', process.cwd())
     console.log('ERR', err)
   }
 
