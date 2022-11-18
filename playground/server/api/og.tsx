@@ -15,7 +15,7 @@ async function initFonts(): Promise<SatoriOptions['fonts']> {
     console.log('process.cwd()', process.cwd())
     console.log('fontDataTest', fontDataTest)
   } catch (err) {
-    const folders = await fs.readdir(process.cwd(), {withFileTypes: true})
+    const folders = await fs.readdir(path.join(process.cwd(), '../../../'), {withFileTypes: true})
     console.log('process.cwd()', folders)
     console.log('ERR', err)
   }
