@@ -10,7 +10,7 @@ async function initFonts(): Promise<SatoriOptions['fonts']> {
   return [
     {
       name: 'Roboto',
-      data: Buffer.from(Roboto, 'base64'),
+      data: Roboto,
       weight: 400,
       style: 'normal',
     },
