@@ -1,7 +1,7 @@
 import type { SatoriOptions } from 'satori'
 import { satori } from 'v-satori'
 import { eventHandler, getQuery } from 'h3'
-import Image from '@/components/sfc.vue'
+import Image from '@/components/Image.vue'
 
 import Roboto from '@/lib/fonts/Roboto-Regular.ttf'
 
