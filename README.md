@@ -43,9 +43,12 @@ defineProps({
 ```
 
 ```ts
-// ~/server/api/og.ts
+// server/api/og.ts
+
 import { satori } from 'v-satori'
 import Image from '@/components/Image.vue'
+// https://github.com/wobsoriano/unplugin-font-to-buffer
+import Roboto from '@/lib/fonts/Roboto-Regular.ttf'
 
 export default eventHandler(async (event) => {
   const query = useQuery(event)
@@ -56,8 +59,13 @@ export default eventHandler(async (event) => {
       website: query.website
     },
     width: 1200,
-    height: 627,
-    fonts: []
+    height: 600,
+    fonts: [{
+      name: 'Roboto',
+      data: Roboto,
+      weight: 400,
+      style: 'normal',
+    }]
   })
 
   setHeader(event, 'Content-Type', 'image/svg+xml')
