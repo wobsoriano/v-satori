@@ -10,20 +10,17 @@ export default defineNuxtConfig({
       ],
     },
   },
-  satori: {
-    jsx: false,
-  },
 })
 
 // adapted from mattjennings
 // https://github.com/mattjennings/mattjennings.io/blob/master/vite.config.js
 function rawFonts(): Plugin {
   return {
-    name: 'vite-plugin-raw-fonts',
-    transform(code, id) {
+    name: 'rollup-plugin-raw-fonts',
+    transform(_code, id) {
       if (id.endsWith('.ttf')) {
-        const base64 = fs.readFileSync(id, { encoding: 'base64' })
-        return { code: `export default ${JSON.stringify(base64)}`, map: null }
+        const buffer = fs.readFileSync(id)
+        return { code: `export default ${JSON.stringify(buffer)}`, map: null }
       }
     },
   }
