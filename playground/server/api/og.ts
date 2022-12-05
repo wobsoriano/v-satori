@@ -1,29 +1,15 @@
-import * as fs from 'fs/promises'
-import { join } from 'path'
 import type { SatoriOptions } from 'satori'
-// import satori from 'satori'
 import { satori } from 'v-satori'
 import { eventHandler, getQuery } from 'h3'
 import Image from '@/components/sfc.vue'
 
+import Roboto from '@/lib/fonts/Roboto-Regular.ttf'
+
 async function initFonts(): Promise<SatoriOptions['fonts']> {
-  let fontData: Buffer
-
-  if (process.env.NODE_ENV === 'development') {
-    const fontPath = join(process.cwd(), 'public', 'fonts', 'Roboto-Bold.ttf')
-    fontData = await fs.readFile(fontPath)
-  }
-  else {
-    // TODO: Fix this
-    fontData = await $fetch('https://v-satori.vercel.app/fonts/Roboto-Bold.ttf', {
-      responseType: 'arrayBuffer',
-    })
-  }
-
   return [
     {
-      name: 'Inter',
-      data: fontData,
+      name: 'Roboto',
+      data: Buffer.from(Roboto),
       weight: 400,
       style: 'normal',
     },
