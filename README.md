@@ -51,7 +51,7 @@ import Image from '@/components/Image.vue'
 import Roboto from '@/lib/fonts/Roboto-Regular.ttf'
 
 export default eventHandler(async (event) => {
-  const query = useQuery(event)
+  const query = getQuery(event)
 
   const svg = await satori(Image, {
     props: {
