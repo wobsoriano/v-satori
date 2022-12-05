@@ -22,8 +22,8 @@ function rawFonts(): Plugin {
     name: 'vite-plugin-raw-fonts',
     transform(code, id) {
       if (id.endsWith('.ttf')) {
-        const buffer = fs.readFileSync(id)
-        return { code: `export default ${JSON.stringify(buffer)}`, map: null }
+        const base64 = fs.readFileSync(id, { encoding: 'base64' })
+        return { code: `export default ${JSON.stringify(base64)}`, map: null }
       }
     },
   }

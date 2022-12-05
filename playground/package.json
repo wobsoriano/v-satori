@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@resvg/resvg-js": "^2.2.0",
     "v-satori": "workspace:*"
   },
   "devDependencies": {
