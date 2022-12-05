@@ -6,11 +6,13 @@ export default defineComponent({
   props: {
     title: {
       type: String,
-      required: true,
+      required: false,
+      default: 'OG Image Generator using Nuxt and Satori',
     },
     website: {
       type: String,
-      required: true,
+      required: false,
+      default: 'v-satori.vercel.app',
     },
   },
   setup(props) {

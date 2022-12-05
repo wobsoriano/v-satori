@@ -1,5 +1,5 @@
 import { renderToString } from 'vue/server-renderer'
-import { createApp, h } from 'vue'
+import { createSSRApp } from 'vue'
 import { html as _html } from 'satori-html'
 import type { SatoriOptions } from 'satori'
 import _satori from 'satori'
@@ -26,9 +26,9 @@ export async function html<T extends Component = Component>(component: T, props?
   let Root: App<Element>
 
   if (props)
-    Root = createApp(h(component, props))
+    Root = createSSRApp(component, props)
   else
-    Root = createApp(component)
+    Root = createSSRApp(component)
 
   const strComponent = await renderToString(Root)
 

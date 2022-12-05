@@ -15,7 +15,7 @@ importers:
       tsup: 6.5.0
       typescript: ^4.7.4
       vitest: ^0.25.3
-      vue: ^3.2.41
+      vue: ^3.2.45
     dependencies:
       satori-html: 0.3.0
     devDependencies:

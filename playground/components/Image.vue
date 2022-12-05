@@ -1,7 +1,15 @@
 <script setup>
 defineProps({
-  title: String,
-  website: String,
+  title: {
+    type: String,
+    required: false,
+    default: 'OG Image Generator using Nuxt and Satori',
+  },
+  website: {
+    type: String,
+    required: false,
+    default: 'v-satori.vercel.app',
+  },
 })
 </script>
 
