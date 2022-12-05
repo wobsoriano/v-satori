@@ -59,7 +59,7 @@ export default eventHandler(async (event) => {
       website: query.website
     },
     width: 1200,
-    height: 600,
+    height: 630,
     fonts: [{
       name: 'Roboto',
       data: Roboto,

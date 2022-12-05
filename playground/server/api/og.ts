@@ -28,7 +28,7 @@ export default eventHandler(async (event) => {
       website: query.website || 'v-satori.vercel.app',
     },
     width: 1200,
-    height: 600,
+    height: 630,
     fonts,
   })
 
