@@ -1,12 +1,6 @@
-import FontToBuffer from 'unplugin-font-to-buffer/rollup'
-
 export default defineNuxtConfig({
-  modules: ['v-satori/nuxt'],
-  nitro: {
-    rollupConfig: {
-      plugins: [
-        FontToBuffer(),
-      ],
-    },
-  },
+  modules: [
+    'unplugin-font-to-buffer/nuxt',
+    'v-satori/nuxt',
+  ],
 })

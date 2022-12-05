@@ -15,6 +15,6 @@
   },
   "devDependencies": {
     "nuxt": "3.0.0",
-    "unplugin-font-to-buffer": "^0.0.2"
+    "unplugin-font-to-buffer": "^0.1.2"
   }
 }
