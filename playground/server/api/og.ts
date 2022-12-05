@@ -1,25 +1,10 @@
-import type { SatoriOptions } from 'satori'
 import { satori } from 'v-satori'
 import { eventHandler, getQuery } from 'h3'
 import { Resvg } from '@resvg/resvg-js'
 import Image from '@/components/Image.vue'
-
 import Roboto from '@/lib/fonts/Roboto-Regular.ttf'
 
-async function initFonts(): Promise<SatoriOptions['fonts']> {
-  return [
-    {
-      name: 'Roboto',
-      data: Roboto,
-      weight: 400,
-      style: 'normal',
-    },
-  ]
-}
-
 export default eventHandler(async (event) => {
-  const fonts = await initFonts()
-
   const query = getQuery(event) as Record<string, string>
 
   const svg = await satori(Image, {
@@ -29,7 +14,12 @@ export default eventHandler(async (event) => {
     },
     width: 1200,
     height: 630,
-    fonts,
+    fonts: [{
+      name: 'Roboto',
+      data: Roboto,
+      weight: 400,
+      style: 'normal',
+    }],
   })
 
   const resvg = new Resvg(svg, {
