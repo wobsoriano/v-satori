@@ -1,15 +1,15 @@
 import { renderToString } from 'vue/server-renderer'
-import type { Component } from 'vue'
+import type { AllowedComponentProps, Component, VNodeProps } from 'vue'
 import { createSSRApp } from 'vue'
 import { html as _html } from 'satori-html'
 import type { SatoriOptions } from 'satori'
 import _satori from 'satori'
 
-type ExtractComponentProps<TComponent> =
+export type ExtractComponentProps<TComponent> =
   TComponent extends new () => {
     $props: infer P
   }
-    ? P
+    ? Omit<P, keyof VNodeProps | keyof AllowedComponentProps>
     : never
 
 // Fix for error TS4058. Taken from satori-html source code.
