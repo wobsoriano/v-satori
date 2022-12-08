@@ -1,15 +1,10 @@
-<script setup>
-defineProps({
-  title: {
-    type: String,
-    required: false,
-    default: 'OG Image Generator using Nuxt and Satori',
-  },
-  website: {
-    type: String,
-    required: false,
-    default: 'v-satori.vercel.app',
-  },
+<script setup lang="ts">
+withDefaults(defineProps<{
+  title?: string
+  website?: string
+}>(), {
+  title: 'OG Image Generator using Nuxt and Satori',
+  website: 'v-satori.vercel.app',
 })
 </script>
 
