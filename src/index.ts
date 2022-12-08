@@ -3,7 +3,7 @@ import { createSSRApp } from 'vue'
 import { html as _html } from 'satori-html'
 import type { SatoriOptions } from 'satori'
 import _satori from 'satori'
-import type { App, Component } from 'vue'
+import type { Component } from 'vue'
 
 // Fix for error TS4058. Taken from satori-html source code.
 export interface VNode {
@@ -23,14 +23,9 @@ export type ExtractComponentProps<TComponent> =
     : never
 
 export async function html<T extends Component = Component>(component: T, props?: ExtractComponentProps<T>): Promise<VNode> {
-  let Root: App<Element>
+  const App = createSSRApp(component, props || {})
 
-  if (props)
-    Root = createSSRApp(component, props)
-  else
-    Root = createSSRApp(component)
-
-  const strComponent = await renderToString(Root)
+  const strComponent = await renderToString(App)
 
   return _html(strComponent)
 }
