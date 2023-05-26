@@ -5,8 +5,8 @@ importers:
   .:
     dependencies:
       satori-html:
-        specifier: ^0.3.0
-        version: 0.3.0
+        specifier: ^0.3.2
+        version: 0.3.2
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^0.33.1
@@ -5632,10 +5632,10 @@ packages:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
     dev: true
 
-  /satori-html@0.3.0:
-    resolution: {integrity: sha512-/NzIu2/FoxsXj4zgBdw2vMbMS77a96VfBcMblPfj1EPs2oxBf9rzNJ7y5tvnm5W+mOWoOpJjDjGSSA5tFv5xdQ==}
+  /satori-html@0.3.2:
+    resolution: {integrity: sha512-wjTh14iqADFKDK80e51/98MplTGfxz2RmIzh0GqShlf4a67+BooLywF17TvJPD6phO0Hxm7Mf1N5LtRYvdkYRA==}
     dependencies:
-      ultrahtml: 1.0.0
+      ultrahtml: 1.2.0
     dev: false
 
   /satori@0.9.1:
@@ -6272,6 +6272,11 @@ packages:
 
   /ultrahtml@1.0.0:
     resolution: {integrity: sha512-BOtReLegZ/OlSTVOSt4aH+wrUPwxoXvapUHXjwhDE4k4kMISWdfUR4PH5wvt/vgKjFcAcEUPFEZQiPiB87XO3Q==}
+    dev: true
+
+  /ultrahtml@1.2.0:
+    resolution: {integrity: sha512-vxZM2yNvajRmCj/SknRYGNXk2tqiy6kRNvZjJLaleG3zJbSh/aNkOqD1/CVzypw8tyHyhpzYuwQgMMhUB4ZVNQ==}
+    dev: false
 
   /unbox-primitive@1.0.2:
     resolution: {integrity: sha512-61pPlCD9h51VoreyJ0BReideM3MDKMKnh6+V9L08331ipq6Q8OFXZYiqP6n/tbHx4s5I9uRhcye6BrbkizkBDw==}

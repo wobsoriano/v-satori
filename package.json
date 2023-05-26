@@ -50,7 +50,7 @@
     "vue": "^3.2.0"
   },
   "dependencies": {
-    "satori-html": "^0.3.0"
+    "satori-html": "^0.3.2"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.33.1",
