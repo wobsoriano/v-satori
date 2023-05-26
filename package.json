@@ -1,6 +1,6 @@
 {
   "name": "v-satori",
-  "version": "0.1.9",
+  "version": "0.2.0",
   "packageManager": "pnpm@7.32.5",
   "description": "Generate a satori-friendly VDOM from a Vue component.",
   "author": "Robert Soriano <sorianorobertc@gmail.com>",
