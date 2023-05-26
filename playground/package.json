@@ -10,11 +10,11 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@resvg/resvg-js": "^2.2.0",
+    "@resvg/resvg-js": "^2.4.1",
     "v-satori": "workspace:*"
   },
   "devDependencies": {
-    "nuxt": "3.0.0",
-    "unplugin-font-to-buffer": "^0.1.4"
+    "nuxt": "3.5.1",
+    "unplugin-font-to-buffer": "^0.2.0"
   }
 }
